@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Max Ltd | Excellence in Tourism & Technology Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(220, 38, 38, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes rotate-360 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInModal {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-slide-down {
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .animate-fade {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-rotate {
+            animation: rotate-360 8s linear infinite;
+        }
+
+        .animate-bounce-in {
+            animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .animate-modal {
+            animation: slideInModal 0.4s ease-out;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(220, 38, 38, 0.1));
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #3b82f6, #dc2626) 1;
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3), 0 10px 20px rgba(220, 38, 38, 0.2);
+        }
+
+        .line-animation {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .line-animation::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #dc2626);
+            animation: slideRight 0.6s ease forwards;
+        }
+
+        @keyframes slideRight {
+            to {
+                left: 100%;
+            }
+        }
+
+        nav a:hover {
+            animation: slideRight 0.6s ease forwards;
+            position: relative;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(220, 38, 38, 0.05));
+            border-left: 4px solid #3b82f6;
+            border-right: 4px solid #dc2626;
+            cursor: pointer;
+        }
+
+        .training-card {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(59, 130, 246, 0.05));
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #dc2626, #3b82f6) 1;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #3b82f6, #dc2626);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4), 0 10px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .pricing-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .pricing-table thead {
+            background: linear-gradient(135deg, #3b82f6, #dc2626);
+            color: white;
+        }
+
+        .pricing-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .pricing-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .pricing-table tbody tr:hover {
+            background-color: #f3f4f6;
+        }
+
+        .pricing-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .payment-code {
+            background-color: #f3f4f6;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.875rem;
+            color: #1f2937;
+            word-break: break-all;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: #dc2626;
+        }
+
+        .price-badge {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(220, 38, 38, 0.1));
+            border-left: 4px solid #3b82f6;
+            border-right: 4px solid #dc2626;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            animation: slideInModal 0.4s ease-out;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f3f4f6;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #dc2626;
+            color: white;
+        }
+
+        .service-detail-icon {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 3rem;
+            margin: 0 auto 20px;
+        }
+
+        .bank-info-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(220, 38, 38, 0.1));
+            border-left: 4px solid #3b82f6;
+            border-right: 4px solid #dc2626;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .account-number {
+            font-family: monospace;
+            font-weight: bold;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-900 scroll-smooth">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-lg border-b-2 border-blue-600">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter animate-slide-down">
+                <span class="gradient-text">PRO MAX</span>
+                <span class="text-red-600">LTD</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a href="#about" class="relative line-animation hover:text-blue-600 transition">About</a>
+                <a href="#services" class="relative line-animation hover:text-red-600 transition">Services</a>
+                <a href="#training" class="relative line-animation hover:text-blue-600 transition">Training</a>
+                <a href="#pricing" class="relative line-animation hover:text-red-600 transition">Pricing</a>
+                <a href="#goals" class="relative line-animation hover:text-blue-600 transition">Goals</a>
+                <a href="#contact" class="relative line-animation hover:text-red-600 transition">Contact</a>
+            </div>
+            <a href="#contact" class="cta-button text-white px-6 py-2 rounded-full font-bold">BOOK NOW</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative h-screen flex items-center justify-center text-center text-white pt-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-black/60 to-red-900/70 z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        <div class="relative z-20 px-4 animate-fade">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-slide-down">
+                <span class="text-blue-300">Adventure</span> at its <span class="text-red-400">Max</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto animate-slide-up font-light">Discover the world's most breathtaking destinations with Pro Max Ltd</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.2s">
+                <a href="#services" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover-lift">View Tours</a>
+                <a href="#contact" class="cta-button text-white px-8 py-3 rounded-lg font-bold text-lg">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="scroll-reveal">
+                <span class="text-red-600 font-bold tracking-widest uppercase text-sm">Our Story</span>
+                <h2 class="text-4xl font-bold mt-2 mb-6 bg-gradient-to-r from-blue-700 to-red-600 bg-clip-text text-transparent">About Pro Max Ltd</h2>
+                <p class="text-gray-700 leading-relaxed text-lg font-light">
+                    Pro Max Ltd is a premier tour and travel agency based in Rwanda, dedicated to redefining the tourism experience. We don't just provide trips; we craft lifelong memories through personalized service and expert local knowledge.
+                </p>
+                <div class="mt-6 h-1 w-24 bg-gradient-to-r from-blue-600 to-red-600 rounded-full"></div>
+            </div>
+            <div class="gradient-bg p-10 rounded-3xl hover-lift scroll-reveal" style="animation-delay: 0.2s">
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">Why "Pro Max"?</h3>
+                <p class="text-gray-800 leading-relaxed">Because we believe in <strong>Maximum</strong> comfort, <strong>Professional</strong> guidance, and <strong>Maximized</strong> value for every traveler.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gradient-to-b from-gray-50 to-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">Exclusive Services</h2>
+            <p class="text-center text-gray-600 mb-16 text-lg">Click on any service to view details and pricing</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Wildlife Safaris -->
+                <div class="service-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal" onclick="openServiceModal('wildlife')">
+                    <div class="text-4xl text-blue-600 mb-6 animate-float">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Wildlife Safaris</h4>
+                    <p class="text-gray-600 leading-relaxed">Unforgettable encounters with nature in the heart of Africa. Expert guides and premium comfort await.</p>
+                    <div class="mt-4 text-blue-600 font-bold">Click to view pricing →</div>
+                </div>
+                
+                <!-- Visa Assistance -->
+                <div class="service-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal" style="animation-delay: 0.1s" onclick="openServiceModal('visa')">
+                    <div class="text-4xl text-red-600 mb-6 animate-float" style="animation-delay: 0.5s">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Visa Assistance</h4>
+                    <p class="text-gray-600 leading-relaxed">Professional support for all your international travel documentation. Hassle-free processing.</p>
+                    <div class="mt-4 text-red-600 font-bold">Click to view pricing →</div>
+                </div>
+                
+                <!-- Luxury Car Rentals -->
+                <div class="service-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal" style="animation-delay: 0.2s" onclick="openServiceModal('carrentals')">
+                    <div class="text-4xl text-blue-600 mb-6 animate-float" style="animation-delay: 1s">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Luxury Car Rentals</h4>
+                    <p class="text-gray-600 leading-relaxed">Travel in style with our fleet of high-end, comfortable vehicles. Premium service included.</p>
+                    <div class="mt-4 text-blue-600 font-bold">Click to view pricing →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Services Section -->
+    <section id="training" class="py-24 bg-gradient-to-b from-red-50 via-blue-50 to-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Empower Yourself</span>
+                <h2 class="text-4xl font-bold mt-4 mb-6 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">Technology Training Programs</h2>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                    🎓 Welcome to Pro Max Ltd's Technology Training Center! Click on any training program to view details and pricing.
+                </p>
+                <div class="mt-6 h-1 w-32 bg-gradient-to-r from-red-600 to-blue-600 rounded-full mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Website Building -->
+                <div class="training-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal text-center" onclick="openServiceModal('website')">
+                    <div class="tech-icon bg-gradient-to-br from-blue-100 to-blue-50 mx-auto mb-6 animate-bounce-in">
+                        <i class="fas fa-code text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Website Building</h4>
+                    <p class="text-gray-600 leading-relaxed mb-4">Learn to create stunning, responsive websites using modern technologies and best practices.</p>
+                    <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">HTML • CSS • JS</span>
+                    <div class="mt-4 text-blue-600 font-bold text-sm">Click for details →</div>
+                </div>
+
+                <!-- Apps Development -->
+                <div class="training-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal text-center" style="animation-delay: 0.1s" onclick="openServiceModal('mobileapps')">
+                    <div class="tech-icon bg-gradient-to-br from-red-100 to-red-50 mx-auto mb-6 animate-bounce-in" style="animation-delay: 0.1s">
+                        <i class="fas fa-mobile-alt text-red-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Mobile Apps</h4>
+                    <p class="text-gray-600 leading-relaxed mb-4">Develop powerful Android and iOS applications with hands-on training and real-world projects.</p>
+                    <span class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Android • iOS</span>
+                    <div class="mt-4 text-red-600 font-bold text-sm">Click for details →</div>
+                </div>
+
+                <!-- Computer Maintenance -->
+                <div class="training-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal text-center" style="animation-delay: 0.2s" onclick="openServiceModal('maintenance')">
+                    <div class="tech-icon bg-gradient-to-br from-blue-100 to-blue-50 mx-auto mb-6 animate-bounce-in" style="animation-delay: 0.2s">
+                        <i class="fas fa-laptop-medical text-blue-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Computer Maintenance</h4>
+                    <p class="text-gray-600 leading-relaxed mb-4">Master hardware troubleshooting, system optimization, and IT support skills for a career in tech support.</p>
+                    <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Hardware • Software</span>
+                    <div class="mt-4 text-blue-600 font-bold text-sm">Click for details →</div>
+                </div>
+
+                <!-- Phone Apps -->
+                <div class="training-card p-8 rounded-2xl shadow-lg hover-lift scroll-reveal text-center" style="animation-delay: 0.3s" onclick="openServiceModal('phoneapps')">
+                    <div class="tech-icon bg-gradient-to-br from-red-100 to-red-50 mx-auto mb-6 animate-bounce-in" style="animation-delay: 0.3s">
+                        <i class="fas fa-phone text-red-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-gray-900">Phone Apps Development</h4>
+                    <p class="text-gray-600 leading-relaxed mb-4">Create innovative smartphone applications with cutting-edge frameworks and tools.</p>
+                    <span class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">React • Flutter</span>
+                    <div class="mt-4 text-red-600 font-bold text-sm">Click for details →</div>
+                </div>
+            </div>
+
+            <!-- Training Features -->
+            <div class="mt-20 bg-gradient-to-r from-blue-900 to-red-900 text-white rounded-3xl p-12 scroll-reveal">
+                <h3 class="text-3xl font-bold mb-10 text-center">Why Choose Our Training?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="hover-lift">
+                        <div class="text-4xl mb-3 animate-float">
+                            <i class="fas fa-chalkboard-user text-blue-300"></i>
+                        </div>
+                        <h4 class="font-bold mb-2 text-lg">Expert Instructors</h4>
+                        <p class="text-blue-100">Industry professionals with years of experience</p>
+                    </div>
+                    <div class="hover-lift">
+                        <div class="text-4xl mb-3 animate-float" style="animation-delay: 0.3s">
+                            <i class="fas fa-laptop text-red-300"></i>
+                        </div>
+                        <h4 class="font-bold mb-2 text-lg">Hands-On Learning</h4>
+                        <p class="text-blue-100">Real projects and practical assignments</p>
+                    </div>
+                    <div class="hover-lift">
+                        <div class="text-4xl mb-3 animate-float" style="animation-delay: 0.6s">
+                            <i class="fas fa-certificate text-blue-300"></i>
+                        </div>
+                        <h4 class="font-bold mb-2 text-lg">Certifications</h4>
+                        <p class="text-blue-100">Recognized certificates upon completion</p>
+                    </div>
+                    <div class="hover-lift">
+                        <div class="text-4xl mb-3 animate-float" style="animation-delay: 0.9s">
+                            <i class="fas fa-briefcase text-red-300"></i>
+                        </div>
+                        <h4 class="font-bold mb-2 text-lg">Career Support</h4>
+                        <p class="text-blue-100">Job placement assistance and career guidance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-16 text-center scroll-reveal">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">Ready to Transform Your Career?</h3>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Join thousands of successful graduates who have advanced their careers through Pro Max Ltd's training programs.</p>
+                <a href="#contact" class="cta-button text-white px-10 py-4 rounded-full font-bold text-lg inline-block">Enroll Now - Limited Spots Available!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Payment Modes Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-b from-gray-50 to-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Transparent Pricing</span>
+                <h2 class="text-4xl font-bold mt-4 mb-6 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">Pricing & Payment Modes</h2>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
+                    Simple, transparent pricing for all our services. Choose the package that suits your needs and pay conveniently.
+                </p>
+                <div class="mt-6 h-1 w-32 bg-gradient-to-r from-blue-600 to-red-600 rounded-full mx-auto"></div>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden scroll-reveal mb-16 hover-lift">
+                <div class="overflow-x-auto">
+                    <table class="pricing-table w-full">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Service Category</th>
+                                <th class="text-left">Service Name</th>
+                                <th class="text-center">Duration</th>
+                                <th class="text-center">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Technology Training -->
+                            <tr>
+                                <td><strong>Technology Training</strong></td>
+                                <td>Website Building</td>
+                                <td class="text-center">30 Days</td>
+                                <td class="text-center"><span class="price-badge">$40</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technology Training</strong></td>
+                                <td>Mobile Apps Development</td>
+                                <td class="text-center">30 Days</td>
+                                <td class="text-center"><span class="price-badge">$40</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technology Training</strong></td>
+                                <td>Computer Maintenance</td>
+                                <td class="text-center">30 Days</td>
+                                <td class="text-center"><span class="price-badge">$40</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technology Training</strong></td>
+                                <td>Phone Apps Development</td>
+                                <td class="text-center">30 Days</td>
+                                <td class="text-center"><span class="price-badge">$40</span></td>
+                            </tr>
+                            <!-- Tourism Services -->
+                            <tr>
+                                <td><strong>Tourism Services</strong></td>
+                                <td>Wildlife Safaris</td>
+                                <td class="text-center">Per Package</td>
+                                <td class="text-center"><span class="price-badge">$150</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tourism Services</strong></td>
+                                <td>Gorilla Trekking</td>
+                                <td class="text-center">Per Package</td>
+                                <td class="text-center"><span class="price-badge">$150</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tourism Services</strong></td>
+                                <td>Beach Holiday</td>
+                                <td class="text-center">Per Package</td>
+                                <td class="text-center"><span class="price-badge">$150</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tourism Services</strong></td>
+                                <td>Visa Assistance</td>
+                                <td class="text-center">Per Package</td>
+                                <td class="text-center"><span class="price-badge">$150</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tourism Services</strong></td>
+                                <td>Luxury Car Rentals</td>
+                                <td class="text-center">Per Package</td>
+                                <td class="text-center"><span class="price-badge">$150</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Payment Methods Section -->
+            <div class="grid md:grid-cols-2 gap-8 scroll-reveal" style="animation-delay: 0.2s">
+                <!-- Payment Methods Card -->
+                <div class="gradient-bg p-8 rounded-3xl hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-blue-600 mr-4">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Payment Methods</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-3 mt-1 font-bold"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Mobile Money</h4>
+                                <p class="text-gray-600 text-sm">Fast, secure, and convenient payments via mobile</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-3 mt-1 font-bold"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Bank Transfer</h4>
+                                <p class="text-gray-600 text-sm">Direct bank account transfers accepted</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-600 mr-3 mt-1 font-bold"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Cash Payment</h4>
+                                <p class="text-gray-600 text-sm">Pay in person at our Kigali office</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Money Details Card -->
+                <div class="bg-gradient-to-br from-blue-900 to-red-900 text-white p-8 rounded-3xl hover-lift shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl text-red-300 mr-4">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Mobile Money Details</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-blue-300 mb-2 text-sm uppercase">Primary Contact</h4>
+                            <p class="text-xl font-bold flex items-center">
+                                <i class="fas fa-phone text-red-400 mr-3"></i>
+                                +250 792 369 921
+                            </p>
+                            <p class="text-blue-100 text-sm mt-1">Available for all mobile money transfers</p>
+                        </div>
+
+                        <div class="border-t border-blue-600 pt-6">
+                            <h4 class="font-bold text-red-300 mb-3 text-sm uppercase">Mobile Money Provider Codes</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="text-sm text-blue-200 mb-1"><strong>MTN Mobile Money</strong></p>
+                                    <div class="payment-code bg-white bg-opacity-10 border border-blue-300">
+                                        <span>*182*<span class="text-red-400">1</span>#</span>
+                                        <button class="copy-btn" onclick="copyToClipboard('*182*1#')">Copy</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-200 mb-1"><strong>Airtel Money</strong></p>
+                                    <div class="payment-code bg-white bg-opacity-10 border border-blue-300">
+                                        <span>*134*<span class="text-red-400">1</span>#</span>
+                                        <button class="copy-btn" onclick="copyToClipboard('*134*1#')">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white bg-opacity-10 rounded-lg p-4 border border-red-400">
+                            <p class="text-sm text-yellow-300">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                <strong>Tip:</strong> For faster service, mention your full name during transfer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Transfer Details -->
+            <div class="mt-12 bg-gradient-to-r from-red-50 to-blue-50 rounded-3xl p-8 scroll-reveal hover-lift" style="animation-delay: 0.3s">
+                <div class="flex items-center mb-8">
+                    <div class="text-4xl text-red-600 mr-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">Bank Transfer Details</h3>
+                </div>
+
+                <div class="text-center mb-6">
+                    <p class="text-gray-700 font-bold text-lg">Account Holder: <span class="text-red-600">Innocent BYIRINGIRO</span></p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Bank of Kigali -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-bank text-blue-600 text-lg"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-blue-600">Bank of Kigali</h4>
+                        </div>
+                        <div class="bank-info-box">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1">Account Number</p>
+                                <p class="account-number">100238739181</p>
+                            </div>
+                            <button class="copy-btn" onclick="copyToClipboard('100238739181')">Copy</button>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-4 text-center">
+                            <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+                            Registered to: <strong>Innocent BYIRINGIRO</strong>
+                        </p>
+                    </div>
+
+                    <!-- Equitbank -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover-lift">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-bank text-red-600 text-lg"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-red-600">Equitbank</h4>
+                        </div>
+                        <div class="bank-info-box">
+                            <div>
+                                <p class="text-sm text-gray-600 mb-1">Account Number</p>
+                                <p class="account-number">4007100944814</p>
+                            </div>
+                            <button class="copy-btn" onclick="copyToClipboard('4007100944814')">Copy</button>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-4 text-center">
+                            <i class="fas fa-info-circle mr-2 text-red-600"></i>
+                            Registered to: <strong>Innocent BYIRINGIRO</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Instructions -->
+            <div class="mt-12 bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6 scroll-reveal" style="animation-delay: 0.4s">
+                <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center">
+                    <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                    Payment Instructions
+                </h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="font-bold text-blue-600 mr-3 w-6">1.</span>
+                        <span>Select your desired service and confirm the pricing above</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-blue-600 mr-3 w-6">2.</span>
+                        <span>Choose your preferred payment method (Mobile Money, Bank Transfer, or Cash)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-blue-600 mr-3 w-6">3.</span>
+                        <span>Complete the payment using the provided details above</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-blue-600 mr-3 w-6">4.</span>
+                        <span>Provide proof of payment via email or WhatsApp along with your booking form</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-bold text-blue-600 mr-3 w-6">5.</span>
+                        <span>Confirmation will be sent to you within 24 hours</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Goals Section -->
+    <section id="goals" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div class="scroll-reveal">
+                <h3 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">Our Vision & Goals</h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4 hover-lift">
+                        <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-4 rounded-lg h-fit">
+                            <i class="fas fa-bullseye text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-xl text-gray-900">Global Expansion</h5>
+                            <p class="text-gray-600 font-light">To establish Pro Max Ltd as a global brand in the next 5 years.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 hover-lift">
+                        <div class="bg-gradient-to-br from-red-100 to-red-50 p-4 rounded-lg h-fit">
+                            <i class="fas fa-leaf text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-xl text-gray-900">Eco-Tourism</h5>
+                            <p class="text-gray-600 font-light">Promoting sustainable travel that protects our environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-reveal" style="animation-delay: 0.2s">
+                <h3 class="text-3xl font-bold mb-8 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">Key Objectives</h3>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-center hover-lift">
+                        <i class="fas fa-check text-blue-600 mr-4 font-bold"></i>
+                        <span class="font-medium">100% Client Satisfaction</span>
+                    </li>
+                    <li class="flex items-center hover-lift">
+                        <i class="fas fa-check text-red-600 mr-4 font-bold"></i>
+                        <span class="font-medium">24/7 Customer Support</span>
+                    </li>
+                    <li class="flex items-center hover-lift">
+                        <i class="fas fa-check text-blue-600 mr-4 font-bold"></i>
+                        <span class="font-medium">Safe and Secure Payment Portals</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-r from-blue-900 via-blue-800 to-red-900 text-white px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            <div class="scroll-reveal">
+                <h2 class="text-4xl font-bold mb-8 text-transparent bg-gradient-to-r from-blue-300 to-red-300 bg-clip-text">Get In Touch</h2>
+                <div class="space-y-6 text-xl">
+                    <p class="hover-lift cursor-pointer">
+                        <i class="fas fa-phone text-red-400 mr-4"></i>
+                        <span class="font-light">+25 0792369921</span>
+                    </p>
+                    <p class="hover-lift cursor-pointer">
+                        <i class="fas fa-envelope text-blue-400 mr-4"></i>
+                        <span class="font-light">innocentbyiringiro183@gmail.com</span>
+                    </p>
+                    <p class="hover-lift cursor-pointer">
+                        <i class="fas fa-map-marker-alt text-red-400 mr-4"></i>
+                        <span class="font-light">Kigali, Rwanda</span>
+                    </p>
+                </div>
+                
+                <div class="mt-12 p-6 bg-white rounded-2xl w-fit animate-pulse-glow">
+                    <p class="text-blue-900 font-bold mb-3 text-center">Scan to Save Contact</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TEL:+250792369921" alt="QR Code" class="mx-auto">
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-2xl scroll-reveal hover-lift" style="animation-delay: 0.2s">
+                <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">Book Your Pro Max Experience</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full border-2 border-blue-200 p-4 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition" required>
+                    <input type="email" placeholder="Email Address" class="w-full border-2 border-blue-200 p-4 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition" required>
+                    <select class="w-full border-2 border-blue-200 p-4 rounded-xl focus:ring-2 focus:ring-red-500 outline-none transition" required>
+                        <option>Select Service</option>
+                        <option>Akagera Safari</option>
+                        <option>Gorilla Trekking</option>
+                        <option>Beach Holiday</option>
+                        <option>Website Building Training</option>
+                        <option>Mobile Apps Training</option>
+                        <option>Computer Maintenance Training</option>
+                        <option>Phone Apps Development Training</option>
+                    </select>
+                    <button type="submit" class="w-full cta-button text-white font-black py-4 rounded-xl tracking-widest uppercase">BOOK NOW</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center text-gray-600 bg-gray-900 border-t-4 border-blue-600">
+        <p class="font-light">&copy; 2026 Pro Max Ltd. All Rights Reserved. <span class="text-red-500">•</span> Crafted with passion.</p>
+        <p class="text-sm mt-2 text-gray-500">Tourism • Travel • Technology Training</p>
+    </footer>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal-overlay" onclick="closeServiceModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeServiceModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        revealElements.forEach(el => observer.observe(el));
+
+        // Service Details Data
+        const serviceData = {
+            wildlife: {
+                title: 'Wildlife Safaris',
+                icon: '<i class="fas fa-mountain"></i>',
+                color: 'from-blue-100 to-blue-50',
+                price: '$150',
+                duration: 'Per Package',
+                category: 'Tourism Services',
+                description: 'Experience unforgettable encounters with Africa\'s majestic wildlife. Our expert guides will take you on an immersive journey through pristine natural habitats where you\'ll see lions, elephants, giraffes, and countless other species in their natural environment.',
+                features: [
+                    'Expert local guides',
+                    'Premium vehicles',
+                    'Comfortable accommodations',
+                    'Meals included',
+                    'Photography opportunities'
+                ]
+            },
+            visa: {
+                title: 'Visa Assistance',
+                icon: '<i class="fas fa-passport"></i>',
+                color: 'from-red-100 to-red-50',
+                price: '$150',
+                duration: 'Per Package',
+                category: 'Tourism Services',
+                description: 'We handle all your international travel documentation with professional expertise. Our team assists with visa applications, documentation review, and ensures a hassle-free processing experience for your international travels.',
+                features: [
+                    'Professional application review',
+                    'Documentation assistance',
+                    'Fast processing',
+                    'Multiple country support',
+                    'Consultation included'
+                ]
+            },
+            carrentals: {
+                title: 'Luxury Car Rentals',
+                icon: '<i class="fas fa-car"></i>',
+                color: 'from-blue-100 to-blue-50',
+                price: '$150',
+                duration: 'Per Package',
+                category: 'Tourism Services',
+                description: 'Travel in style and comfort with our premium fleet of high-end vehicles. Whether you need a sedan, SUV, or luxury car, we provide well-maintained vehicles with professional drivers available upon request.',
+                features: [
+                    'Premium vehicle fleet',
+                    'Well-maintained cars',
+                    'Insurance included',
+                    'Professional drivers optional',
+                    'Flexible rental periods'
+                ]
+            },
+            website: {
+                title: 'Website Building',
+                icon: '<i class="fas fa-code"></i>',
+                color: 'from-blue-100 to-blue-50',
+                price: '$40',
+                duration: '30 Days',
+                category: 'Technology Training',
+                description: 'Learn to create stunning, responsive websites using modern technologies. Master HTML, CSS, JavaScript, and web design principles. This comprehensive course includes hands-on projects and real-world applications.',
+                features: [
+                    'HTML & CSS mastery',
+                    'JavaScript fundamentals',
+                    'Responsive design',
+                    'Hands-on projects',
+                    'Certificate upon completion'
+                ]
+            },
+            mobileapps: {
+                title: 'Mobile Apps Development',
+                icon: '<i class="fas fa-mobile-alt"></i>',
+                color: 'from-red-100 to-red-50',
+                price: '$40',
+                duration: '30 Days',
+                category: 'Technology Training',
+                description: 'Develop powerful Android and iOS applications. Learn app architecture, user interface design, and best practices for mobile development through hands-on training and real-world projects.',
+                features: [
+                    'Android development',
+                    'iOS development',
+                    'App architecture',
+                    'UI/UX design',
+                    'Live project building'
+                ]
+            },
+            maintenance: {
+                title: 'Computer Maintenance',
+                icon: '<i class="fas fa-laptop-medical"></i>',
+                color: 'from-blue-100 to-blue-50',
+                price: '$40',
+                duration: '30 Days',
+                category: 'Technology Training',
+                description: 'Master hardware troubleshooting, system optimization, and IT support skills. Gain expertise in computer maintenance to launch a successful career in tech support and IT services.',
+                features: [
+                    'Hardware basics',
+                    'Software troubleshooting',
+                    'System optimization',
+                    'Network basics',
+                    'IT certification path'
+                ]
+            },
+            phoneapps: {
+                title: 'Phone Apps Development',
+                icon: '<i class="fas fa-phone"></i>',
+                color: 'from-red-100 to-red-50',
+                price: '$40',
+                duration: '30 Days',
+                category: 'Technology Training',
+                description: 'Create innovative smartphone applications with cutting-edge frameworks. Learn React Native and Flutter to build cross-platform mobile applications efficiently.',
+                features: [
+                    'React Native framework',
+                    'Flutter development',
+                    'State management',
+                    'API integration',
+                    'App deployment'
+                ]
+            }
+        };
+
+        function openServiceModal(serviceKey) {
+            const service = serviceData[serviceKey];
+            if (!service) return;
+
+            const modalBody = document.getElementById('modalBody');
+            const bgColor = service.color;
+
+            modalBody.innerHTML = `
+                <div class="text-center">
+                    <div class="service-detail-icon bg-gradient-to-br ${bgColor}">
+                        ${service.icon}
+                    </div>
+                    <h2 class="text-3xl font-bold mb-2 text-gray-900">${service.title}</h2>
+                    <div class="flex justify-center gap-4 mb-6">
+                        <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full font-semibold">${service.category}</span>
+                        <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full font-semibold">${service.duration}</span>
+                    </div>
+                    <div class="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text mb-6">
+                        ${service.price}
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-lg">${service.description}</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-left mb-4 text-gray-900">What You'll Get:</h3>
+                        <ul class="space-y-2">
+                            ${service.features.map(feature => `
+                                <li class="flex items-center text-left text-gray-700">
+                                    <i class="fas fa-check text-green-600 mr-3 font-bold"></i>
+                                    ${feature}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3 pt-6 border-t border-gray-200">
+                        <a href="#contact" class="block cta-button text-white px-6 py-3 rounded-lg font-bold" onclick="closeServiceModal()">Book Now</a>
+                        <button onclick="closeServiceModal()" class="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-300 transition">Close</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('serviceModal').classList.add('active');
+        }
+
+        function closeServiceModal(event) {
+            if (event && event.target.id !== 'serviceModal') return;
+            document.getElementById('serviceModal').classList.remove('active');
+        }
+
+        // Copy to Clipboard Function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard: ' + text);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeServiceModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
